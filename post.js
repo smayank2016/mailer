@@ -3,6 +3,7 @@ var express = require("express")
 var http = require("http")
 var bodyParser = require('body-parser');
 var app = express()
+var port = process.env.PORT || 8080;
 
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -50,5 +51,5 @@ app.post('/api/users', function(req, res) {
 // routes will go here
 
 // start the server
-app.listen(8080);
-console.log('Server started! At http://localhost:' + 8080);
+app.listen(port);
+//console.log('Server started! At http://localhost:' + 8080);
